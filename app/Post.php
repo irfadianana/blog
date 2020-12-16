@@ -10,4 +10,14 @@ class Post extends Model
     {
         return $this->belongsTo('App\Category');
     }
+
+    public function tags()
+    {
+        return $this->belongsToMany('App\Tag'); //many to many artinya satu post boleh beberapa tag
+    }
+
+    public function comments()
+    {
+        return $this->morphMany('App\Comment', 'commentable');
+    }
 }

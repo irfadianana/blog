@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Tag;
+use App\Post;
+use App\Category;
 
 class TagController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,8 @@ class TagController extends Controller
      */
     public function index()
     {
-        //
+        $tags = Tag::orderBy('id','decs')->paginate(3);
+        return \view('tags.index')->withTags($tags);
     }
 
     /**
@@ -56,7 +63,11 @@ class TagController extends Controller
      */
     public function show($id)
     {
-        //
+        $tags = Tag::paginate(3); 
+        $tags2 = Tag::find($id);
+        $categories = Category::paginate(4);
+        $posts = Post::all();
+        return \view('tags.show')->withTags($tags)->withPosts($posts)->withCategories($categories)->withTags2($tags2);
     }
 
     /**

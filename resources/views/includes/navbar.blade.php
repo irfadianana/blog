@@ -11,29 +11,36 @@
                     </button>
 
                     <!-- Branding Image -->
+                  
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('app.name', 'Singgahki') }}
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                        <li><a href="">Posts</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Contact</a></li>
-                    </ul>
+                   
 
-                    <form action="" class="navbar-form navbar-left">                    
+                <form action="{{route('search')}}" class="navbar-form navbar-left" method="post">
+                    {{csrf_field()}}                    
                         <div class="form-group">
-                            <input type="" name="" class="form-control" placeholder="Search">
+                            <input type="text" name="search" class="form-control" placeholder="Search">
                         </div>
-                        <button class="btn btn-default">Submit</button>
+                        <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </form>
 
                     <!-- Right Side Of Navbar -->
+                    {{-- <ul class="nav navbar-nav">
+                        
+                    </ul> --}}
                     <ul class="nav navbar-nav navbar-right">
+                        &nbsp;
+                        {{-- <li>  <a href="{{ url('/') }}">Home</a></li>
+                        <li><a href="{{ url('/category/1') }}">Eat</a></li>
+                        <li><a href="{{ url('/category/2') }}">Play</a></li>
+                        <li><a href="{{ url('/category/3') }}">Relax</a></li>
+                        <li><a href="{{ url('/category/4') }}">Trip</a></li> --}}
+
                         <!-- Authentication Links -->
                         @guest
                             <li><a href="{{ route('login') }}">Login</a></li>
@@ -47,9 +54,16 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="{{route('posts.create')}}">Create New Post</a></li>
                                     <li class="divider"></li>
+                                    <li><a href="{{route('posts.index')}}">All Post</a></li>
+                                    <li class="divider"></li>
                                     <li><a href="{{route('tags.create')}}">Create New Tag</a></li>
                                     <li class="divider"></li>
+                                    <li><a href="{{route('tags.index')}}">All Tag</a></li>
+                                    <li class="divider"></li>
                                     <li><a href="{{route('category.create')}}">Create New Category</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="{{route('category.index')}}">All Category</a></li>
+                                    
                                 </ul>
                             </li>
 

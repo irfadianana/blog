@@ -4,7 +4,7 @@
 
 @section('content')
 
-        <div class="container">
+        <div class="container" style="min-height: 80vh">
             <div class="text-center"><h1>Halaman Buat Tag</h1></div>
             <hr>
 

@@ -37,5 +37,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js" integrity="sha512-xvhw/4EKqdj+A/dEL/fPZ26Ki3iksy83zzZ36GF0N36I5iJcNTJNjeIqn2W8ZrxTMs9G5FxJw0fwuBsoERkXEw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
+
+    @yield('tekseditor')
 </body>
 </html>

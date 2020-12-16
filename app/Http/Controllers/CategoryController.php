@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
-
+use App\Tag;
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +18,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::orderBy('id','decs')->paginate(4);
+        return \view('category.index')->withCategories($categories);
     }
 
     /**
@@ -56,7 +61,10 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $categories = Category::paginate(4);
+        $categories2 = Category::find($id);
+        $tags = Tag::paginate(3); 
+        return \view('category.show')->withTags($tags)->withCategories($categories)->withCategories2($categories2);
     }
 
     /**

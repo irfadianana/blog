@@ -1,5 +1,5 @@
 body {
-    font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif ;
     color: #7F7F7F;
     background-color: #fff;
 }
@@ -22,7 +22,7 @@ body {
 .header_wrap:after{
   content:"";
   width:100%;
-  height:30%;
+  height:50%;
   position:absolute;
   bottom:0;
   left:0;
@@ -95,12 +95,13 @@ a:hover, a:focus {
 }
  
 .wl{
-      background: #3097d1;
+      background: transparent;
     color: #fff;
+    border-style: hidden;
 }
 
 .wp-separator {
-        background-color: #3097d1;
+        /* background-color: #cff5ff; */
     color: #fff;
 }
 
@@ -125,9 +126,15 @@ a:hover, a:focus {
 }
 
 .footer {
-    background-color: #337AB7;
-    color: #EEE;
-    padding-top: 30px;
+    background-color: #cff5ff;
+    color: black;
+    padding-top: 15px;
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+   
+    
 }
 
 .foot-geo {
@@ -135,15 +142,17 @@ a:hover, a:focus {
 }
 
 .footer-p {
-    background-color: #2B679A;
-    color: #EEE;
-    padding-top: 20px;
+    background-color:#cff5ff;
+    color: black;
+    padding-top: 5px;
     text-align: center;
+    
 }
 
 .footer-nav {
     display: inline-block;
     list-style: none;
+    margin-right: 18px;
 }
 
 .footer-nav li {
@@ -298,6 +307,8 @@ a:hover, a:focus {
 
 .list-group-item{
      border: none;
+     background-color: #cff5ff;
+    
 }
 
 .item.list-group-item .list-group-image
@@ -344,6 +355,14 @@ a:hover, a:focus {
     margin-bottom: 0;
 }
 
+@font-face {
+    font-family: "bertilda";
+    src: url('bertilda.ttf');
+}
+.navbar-brand{
+    font-family: "bertilda";
+    font-size: 50px;
+}
 @media screen and (max-width: 768px) {
 
     .descrip {
